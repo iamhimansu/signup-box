@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Signup</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="viewport">
+            <div class="holder signup">
+                <div class="left-section">
+                    <div class="icon-user-add">
+                        <img src="images/maleadd.svg" class="male-add" alt="">
+                    </div>
+                    <div class="description-holder">
+                        <div class="signup-text">SIGNUP NOW</div>
+                        <div class="label-text">IT'S FREE AND ALWAYS WILL BE!</div>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <div class="logo">LOGO</div>
+                    <div class="input-container"><input type="text" placeholder="Username"></div>
+                    <div class="input-container"><input type="text" placeholder="Email address"></div>
+                    <div class="input-container"><input type="text" placeholder="Password"></div>
+                    <div class="signup-options">
+                        <span class="icons"><img src="images/google.svg" alt=""></span>
+                        <span class="icons"><img src="images/facebook.svg" alt=""></span>
+                        <span class="icons"><img src="images/twitter.svg" alt=""></span>
+                        <button class="signup-btn">Signup</button>
+                    </div>
+                </div>
+            </div>
+            <div class="holder login">
+                <div class="left-section">
+                    <div class="icon-user-add">
+                        <img src="images/user.svg" class="male-add" alt="">
+                    </div>
+                    <div class="description-holder">
+                        <div class="signup-text">LOGIN</div>
+                        <div class="label-text">SHOW YOUR PRESENCE</div>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <div class="logo">LOGO</div>
+                    <div class="input-container"><input type="text" placeholder="Email address"></div>
+                    <div class="input-container"><input type="text" placeholder="Password"></div>
+                    <div class="signup-options">
+                        <button class="signup-btn">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+     <div class="dots">
+            <span class="dot active previous"></span>
+            <span class="dot next"></span>
+        </div>
+    <script>
+        'user strict'
+        const dots = document.querySelectorAll(".dots .dot");
+        dots.forEach(thisDot => {
+            thisDot.addEventListener("click", function () {
+                dots.forEach(thisDot => {
+                    thisDot.classList.remove("active")
+                })
+                this.classList.add("active");
+                const signupbox = document.querySelector(".holder.signup");
+                const loginBox = document.querySelector(".holder.login");
+                if (this.classList.contains("next")) {
+                    signupbox.classList.remove("slide-down");
+                    loginBox.classList.remove("slide-down");
+                    signupbox.classList.add("slide-up");
+                    loginBox.classList.add("slide-up");
+                } else {
+                    signupbox.classList.remove("slide-up");
+                    loginBox.classList.remove("slide-up");
+                    signupbox.classList.add("slide-down");
+                    loginBox.classList.add("slide-down");
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
